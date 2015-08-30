@@ -1,5 +1,5 @@
 //Emily Weston
-//Demo 0
+//Lab 01
 //Hello World Java Program
 //
 //  first compile the program
