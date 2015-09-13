@@ -31,7 +31,7 @@ public class Arithmetic{
             double sockTax2=sockTax1*100;
             int sockTax=(int)sockTax2;
             double sockTax$=(double)sockTax/100;
-        double totalSockCost1=allSockCost$+sockTax$; //total cost of all socks
+        double totalSockCost1=allSockCost$+sockTax$; \\\\\\\\\\\\\\\\\\\\\\\\\\\\//total cost of all socks
             double totalSockCost2=totalSockCost1*100;
             int totalSockCost=(int)totalSockCost2;
             double totalSockCost$=(double)totalSockCost/100;
