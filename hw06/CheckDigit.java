@@ -9,18 +9,18 @@ public class CheckDigit {
         Scanner myScanner=new Scanner (System.in); //declares an instance of scanner
         
         char oneChar=0, twoChar=0, threeChar=0, fourChar=0, fiveChar=0, 
-        sixChar=0, sevenChar=0, eightChar=0, nineChar=0, checkChar=0; //
-        String barcode="0123456789";
-        System.out.print("Please enter a 10 digit barcode: ");
+        sixChar=0, sevenChar=0, eightChar=0, nineChar=0, checkChar=0; //declares and defines a variable for each char of the input
+        String barcode="0123456789"; //declares and defines a variable for the input
+        System.out.print("Please enter a 10 digit barcode: "); //prompts the user to input an ISBN number
      
-        int q=0;
-        boolean boo=true;
+        int q=0; //declares and defines a variable to use to check the loop
+        boolean condition=true; //declares and defines a boolean to use to check the loop
         
         
-        do {
-            barcode=myScanner.next();
-            if (barcode.length()==10) {
-                oneChar=barcode.charAt(0);
+        do { //opens do while loop
+            barcode=myScanner.next(); //allows user to input ISBN number
+            if (barcode.length()==10) { //sets condition for if statement
+                oneChar=barcode.charAt(0); //turns each digit of the user's input into a separate variable
                 twoChar=barcode.charAt(1);
                 threeChar=barcode.charAt(2);
                 fourChar=barcode.charAt(3);
@@ -32,8 +32,8 @@ public class CheckDigit {
                 checkChar=barcode.charAt(9);
                 if (oneChar=='0' || oneChar=='1' || oneChar=='2' || oneChar=='3' 
                 || oneChar=='4' || oneChar=='5' || oneChar=='6' || oneChar=='7' 
-                || oneChar=='8' || oneChar=='9') {
-                    q++;
+                || oneChar=='8' || oneChar=='9') { //sets condition for each char to check if the user's input is made up of all numbers
+                    q++; //additional statement to control the loop; adds one to the value of q if the condition is met
                 } //ends if statement
                 if (twoChar=='0' || twoChar=='1' || twoChar=='2' || twoChar=='3'
                 || twoChar=='4' || twoChar=='5' || twoChar=='6' || twoChar=='7' 
@@ -81,25 +81,24 @@ public class CheckDigit {
                     q++;
                 } //ends if statement
             
-                if (q==10) {
-                    boo=false;
-                    continue;
-                }
-                else {
-                    q=0;
-                    boo = true;
-                  
-                }
-            }
+                if (q==10) { //sets condition to check if the user's input is the correct amount of digits
+                    condition=false; //ends the loop if the user's input is the correct amount of digits
+                    continue; //continues the code
+                } //ends if statement
+                else { //if the q==10 condition is not true
+                    q=0; //additional statement to control the loop; resets the loop and allows the user to input a new ISBN number
+                    condition = true; //additional statement to control the loop; resets the loop and allows the user to input a new ISBN number
+                } //ends else statement
+            } //ends outermost if statement
             
-            System.out.print("This is not a valid ISBN. Please enter 10 digits: ");
-            barcode=myScanner.next();
-            j = 0;
+            System.out.print("This is not a valid ISBN. Please enter 10 digits: "); //tells the user that their input is not valid and prompts them to input a new ISBN number
+            barcode=myScanner.next(); //allows user to input ISBN number
+            q = 0; //additional statement to control the loop; resets the loop and allows the user to input a new ISBN number
             
-        } while (boo);
+        } while (condition); //ends do while loop and sets condition for the loop
         
 
-        int one=Character.getNumericValue(oneChar);
+        int one=Character.getNumericValue(oneChar); //converts each char into an int variable
         int two=Character.getNumericValue(twoChar);
         int three=Character.getNumericValue(threeChar);
         int four=Character.getNumericValue(fourChar);
@@ -110,15 +109,15 @@ public class CheckDigit {
         int nine=Character.getNumericValue(nineChar);
         int check=Character.getNumericValue(checkChar);
         
-        int summation=((one*10)+(two*9)+(three*8)+(four*7)+(five*6)+(six*5)+(seven*4)+(eight*3)+(nine*2));
-        int remainder=(summation%11);
+        int summation=((one*10)+(two*9)+(three*8)+(four*7)+(five*6)+(six*5)+(seven*4)+(eight*3)+(nine*2)); //finds the ISBN sum of all the digits
+        int remainder=(summation%11); //finds the remainder of the ISBN sum
         
-        if (remainder==check) {
-            System.out.println("This is a valid ISBN.");
-        }
-        else {
-            System.out.println("This is not a valid ISBN. Check digit should be " + check);
-        }
+        if (remainder==check) { //condition for if statement
+            System.out.println("This is a valid ISBN."); //tells user their input is a valid ISBN number
+        } //ends if statement
+        else { //if the remainder==check condition is not true
+            System.out.println("This is not a valid ISBN. Check digit should be " + check); //tells user their input is not a valid ISBN number and what it should be
+        } //ends else statement
         
 
         
