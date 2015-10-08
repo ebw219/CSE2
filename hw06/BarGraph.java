@@ -1,4 +1,5 @@
 import java.util.Scanner; //imports Scanner class
+import java.util.Random; //imports Random class
 
 public class BarGraph {
     
@@ -104,6 +105,7 @@ public class BarGraph {
         } //ends while loop
         
         
+        //prints the input for each day's expenses
         System.out.println("Expenses for Monday: $" + Monday);
         System.out.println("Expenses for Tuesday: $" + Tuesday);
         System.out.println("Expenses for Wednesday: $" + Wednesday);
@@ -115,81 +117,85 @@ public class BarGraph {
         
         
 //Monday
-        System.out.println(" ");
+        System.out.println(" "); //creates a line break
         System.out.print("Monday: ");
         int check=1; //declares variable to prevent the loop from being infinite
         while (check<=Monday && Monday>=0) { //sets condition for while loop
                 System.out.print("*");
-                check++;
-        } //ends outer while loop
+                check++; //additional statement to control the loop
+        } //ends while loop
         
 //Tuesday
-        System.out.println(" ");
+        System.out.println(" "); //creates a line break
         System.out.print("Tuesday: ");
-        int check1=1;
-            while (check<=Tuesday && Tuesday>=0) {
+        check=1; //redefines variable so Tuesday loop can work
+            while (check<=Tuesday && Tuesday>=0) { //sets condition for while loop
                 System.out.print("*");
-                check1++;
-        } //ends outer while loop
+                check++; //additional statement to control the loop
+        } //ends while loop
 
 //Wednesday
-        System.out.println(" ");
+        System.out.println(" "); //creates a line break
         System.out.print("Wednesday: ");
-        while (check<=Wednesday) { //sets condition for while loop
-            while (Wednesday>=0 && check<=Wednesday) {
+        check=1; //redefines variable so Wednesday loop can work
+            while (Wednesday>=0 && check<=Wednesday) { //sets condition for while loop
                 System.out.print("*");
-                check++;
-            } //ends inner while loop
-        } //ends outer while loop
+                check++; //additional statement to control the loop
+        } //ends while loop
         
 //Thursday
-        System.out.println(" ");
+        System.out.println(" "); //creates a line break
         System.out.print("Thursday: ");
-        while (check<=Thursday) { //sets condition for while loop
-            while (Thursday>=0 && check<=Thursday) {
+        check=1; //redefines variable so Thursday loop can work
+            while (Thursday>=0 && check<=Thursday) { //sets condition for while loop
                 System.out.print("*");
-                check++;
-            } //ends inner while loop
-                            System.out.println("KILL ME PLS");
-
-        } //ends outer while loop
+                check++; //additional statement to control the loop
+        } //ends while loop
         
 //Friday
-        System.out.println(" ");
+        System.out.println(" "); //creates a line break
         System.out.print("Friday: ");
-        while (check<=Friday) { //sets condition for while loop
-            while (Friday>=0 && check<=Friday) {
+        check=1; //redefines variable so Friday loop can work
+            while (Friday>=0 && check<=Friday) { //sets condition for while loop
                 System.out.print("*");
-                check++;
-            } //ends inner while loop
-        } //ends outer while loop
+                check++; //additional statement to control the loop
+        } //ends while loop
         
 //Saturday
-        System.out.println(" ");
+        System.out.println(" "); //creates a line break
         System.out.print("Saturday: ");
-        while (check<=Saturday) { //sets condition for while loop    
-            while (Saturday>=0 && check<=Saturday) {
+        check=1; //redefines variable so Saturday loop can work
+            while (Saturday>=0 && check<=Saturday) { //sets condition for while loop
                 System.out.print("*");
-                check++;
-            } //ends inner while loop
-        } //ends outer while loop
+                check++; //additional statement to control the loop
+        } //ends while loop
         
 //Sunday
-        System.out.println(" ");
+        System.out.println(" "); //creates a line break
         System.out.print("Sunday: ");
-        while (check<=Sunday) { //sets condition for while loop
-            while (Sunday>=0 && check<=Sunday) {
+        check=1; //redefines variable so Sunday loop can work
+            while (Sunday>=0 && check<=Sunday) { //sets condition for while loop
                 System.out.print("*");
-                check++;
-            } //ends inner while loop
-        } //ends outer while loop
+                check++; //additional statement to control the llop
+        } //ends while loop
         
-    System.out.println(" ");
+    System.out.println(" "); //creates a line break
     
     
-    //double average=((Monday + Tuesday + Wednesday + Thursday + Friday + Saturday + Sunday)/7);
-   // System.out.println("The average is: $" + average);
-        
+    double average=((Monday + Tuesday + Wednesday + Thursday + Friday + Saturday + Sunday)/7); //calculates average expenses for the week
+    System.out.println("The average is: $" + average); //prints average expenses
+    
+
+    double amount = (Math.random()*80+40); //calculates fluctuation in expenses
+    for (amount /= 100; amount<365; amount++) { //sets condition for for loop
+        double amountYear = amount*average; //calculates estimated expenses for one year
+        double estimate = amountYear*4; //calculates estimated expenses for four years
+            if (amount<365) { //sets condition for if statement
+                System.out.println("Estimated expenditure for 4 years: $" + estimate); //prints estimated expenses for four years
+            } //ends if statement    
+    } //ends for loop
+
+
     } //ends main method
     
 } //ends class Bar
